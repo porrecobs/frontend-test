@@ -3,7 +3,9 @@ import Vuex from 'vuex'
 import MainView from '@/views/MainView'
 import Ranking from '@/components/Ranking'
 import initialState from '@/store/state'
+import actions from '@/store/actions'
 const userListFixt = require('../../matchboxbrasil.json')
+jest.mock('@/store/actions')
 
 const localVue = createLocalVue()
 localVue.use(Vuex)
@@ -14,7 +16,10 @@ describe('MainView', () => {
   const build = () => {
     const wrapper = shallowMount(MainView, {
       localVue,
-      store: new Vuex.Store({ state })
+      store: new Vuex.Store({
+        state,
+        actions
+      })
     })
 
     return {
@@ -24,6 +29,7 @@ describe('MainView', () => {
   }
 
   beforeEach(() => {
+    jest.resetAllMocks()
     state = { ...initialState }
   })
 
@@ -44,5 +50,13 @@ describe('MainView', () => {
     state.userList = userListFixt
 
     expect(ranking().vm.userList).toBe(state.userList)
+  })
+
+  it('faz requisicao para pegar a lista', () => {
+    const expectedList = userListFixt
+    const { wrapper } = build()
+
+    expect(wrapper.vm.getUsers()).toHaveBeenCalled()
+    // expect(actions.SEARCH_USER).toHaveBeenCalled()
   })
 })
