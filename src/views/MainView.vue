@@ -32,6 +32,14 @@ export default {
     ...mapState({
       userList: 'userList',
     })
+  },
+  created() {
+    this.getUsers()
+  },
+  methods: {
+    getUsers () {
+      console.log('getUsers')
+    }
   }
 }
 </script>
