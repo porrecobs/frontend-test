@@ -53,10 +53,9 @@ describe('MainView', () => {
   })
 
   it('faz requisicao para pegar a lista', () => {
-    const expectedList = userListFixt
+
     const { wrapper } = build()
 
-    expect(wrapper.vm.getUsers()).toHaveBeenCalled()
-    // expect(actions.SEARCH_USER).toHaveBeenCalled()
+    expect(actions.SEARCH_USER).toHaveBeenCalled()
   })
 })
