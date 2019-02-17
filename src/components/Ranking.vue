@@ -18,7 +18,8 @@
 export default {
   name: 'Ranking',
   props: {
-    msg: String
+    userList: Object,
+    default: () => ({})
   }
 }
 </script>

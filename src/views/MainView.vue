@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="content-container">
-     <Ranking :msg="Ranking"/>
+     <Ranking :userList="userList"/>
     </div>
   </div>
 </template>
@@ -26,6 +26,11 @@ export default {
   name: 'MainView',
   components: {
     Ranking
+  },
+  data() {
+    return {
+      userList: { name: '' }
+    }
   }
 }
 </script>
