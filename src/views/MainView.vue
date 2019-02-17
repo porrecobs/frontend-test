@@ -38,8 +38,7 @@ export default {
   },
   methods: {
     getUsers () {
-      this.$store.dispatch('SEARCH_USER', { })
-      // this.$store.dispatch('SEARCH_USER')
+      this.$store.dispatch('SEARCH_USER_LIST', { })
     }
   }
 }

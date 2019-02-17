@@ -56,6 +56,6 @@ describe('MainView', () => {
 
     const { wrapper } = build()
 
-    expect(actions.SEARCH_USER).toHaveBeenCalled()
+    expect(actions.SEARCH_USER_LIST).toHaveBeenCalled()
   })
 })
