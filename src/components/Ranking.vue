@@ -9,16 +9,22 @@
       </span>
     </div>
     <div class="content">
-
+      <div :v-for="user in userList.data">
+        <ProfileCard :user="user"/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import ProfileCard from "@/components/ProfileCard";
 export default {
   name: 'Ranking',
   props: {
     userList: Object
+  },
+  components: {
+    ProfileCard
   }
 }
 </script>
