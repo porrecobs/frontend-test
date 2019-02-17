@@ -38,7 +38,8 @@ export default {
   },
   methods: {
     getUsers () {
-      console.log('getUsers')
+      this.$store.dispatch('SEARCH_USER', { })
+      // this.$store.dispatch('SEARCH_USER')
     }
   }
 }
