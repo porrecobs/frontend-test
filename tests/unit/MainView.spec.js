@@ -2,7 +2,7 @@ import { shallowMount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 import MainView from '@/views/MainView'
 import Ranking from '@/components/Ranking'
-import initState from '@/store/state'
+import initialState from '@/store/state'
 const userListFixt = require('../../matchboxbrasil.json')
 
 const localVue = createLocalVue()
@@ -24,7 +24,7 @@ describe('MainView', () => {
   }
 
   beforeEach(() => {
-    state = { ...initState }
+    state = { ...initialState }
   })
 
   it('renderiza o componente', () => {
@@ -41,7 +41,7 @@ describe('MainView', () => {
 
   it('passa a lista para o componente de ranking', () => {
     const { ranking } = build()
-    state = { userList: userListFixt }
+    state.userList = userListFixt
 
     expect(ranking().vm.userList).toBe(state.userList)
   })
