@@ -20,6 +20,7 @@
 </style>
 
 <script>
+import { mapState } from 'vuex'
 import Ranking from '@/components/Ranking'
 
 export default {
@@ -27,10 +28,10 @@ export default {
   components: {
     Ranking
   },
-  data() {
-    return {
-      userList: { name: '' }
-    }
+  computed: {
+    ...mapState({
+      userList: 'userList',
+    })
   }
 }
 </script>
