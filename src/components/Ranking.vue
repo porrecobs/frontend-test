@@ -9,22 +9,35 @@
       </span>
     </div>
     <div class="content">
-      <div :v-for="user in userList.data">
-        <ProfileCard :user="user"/>
+      <template v-if="userList.data">
+        <div v-for="(user, index) in userList.data">
+        <ProfileCard
+          :user="user"
+          :position="index + 1"
+        />
       </div>
+      </template>
     </div>
   </div>
 </template>
 
 <script>
-import ProfileCard from "@/components/ProfileCard";
+/* eslint-disable */
+import { mapState } from 'vuex'
+import ProfileCard from '@/components/ProfileCard'
+
 export default {
   name: 'Ranking',
-  props: {
-    userList: Object
+  computed: {
+    ...mapState({
+      userList: 'userList'
+    })
   },
   components: {
     ProfileCard
+  },
+  created () {
+    console.log(this.userList)
   }
 }
 </script>
@@ -38,7 +51,7 @@ export default {
 
   .header {
     font-size: 30pt;
-    font-weight: bolder;
+    font-weight: 700;
     background-color: #fff;
     border-radius: 5px;
   }
