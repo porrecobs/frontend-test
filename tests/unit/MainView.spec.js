@@ -4,7 +4,7 @@ import MainView from '@/views/MainView'
 import Ranking from '@/components/Ranking'
 import initialState from '@/store/state'
 import actions from '@/store/actions'
-const userListFixt = require('../../matchboxbrasil.json')
+const userListFixt = require('../../public/matchboxbrasil.json')
 jest.mock('@/store/actions')
 
 const localVue = createLocalVue()

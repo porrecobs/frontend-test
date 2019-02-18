@@ -1,6 +1,6 @@
 import mutations from '@/store/mutations'
 import initState from '@/store/state'
-const userList = require('../../matchboxbrasil.json')
+const userList = require('../../public/matchboxbrasil.json')
 
 describe('mutations', () => {
   let state

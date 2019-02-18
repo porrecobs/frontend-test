@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import Ranking from '@/components/Ranking'
 import ProfileCard from '@/components/ProfileCard'
-const userListFixt = require('../../matchboxbrasil.json')
+const userListFixt = require('../../public/matchboxbrasil.json')
 
 describe('Ranking', () => {
   let props

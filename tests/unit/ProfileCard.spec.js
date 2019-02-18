@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import ProfileCard from '@/components/ProfileCard'
-const userListFixt = require('../../matchboxbrasil')
+const userListFixt = require('../../public/matchboxbrasil')
 
 describe('ProfileCard', () => {
   let props

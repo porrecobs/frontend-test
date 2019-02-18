@@ -1,7 +1,7 @@
 import flushPromies from 'flush-promises'
 import api from '@/api'
 import actions from '@/store/actions'
-const userListFixt = require('../../matchboxbrasil.json')
+const userListFixt = require('../../public/matchboxbrasil.json')
 jest.mock('@/api')
 
 describe('store actions', () => {
