@@ -6,7 +6,7 @@ export default {
     return new Promise(async (resolve, reject) => {
       try {
         const userList = await api.searchUserList()
-        commit('SET_USER', userList)
+        commit('SET_USER_LIST', userList)
         resolve(userList)
       } catch (err) {
         reject(err)
