@@ -16,6 +16,6 @@ describe('store actions', () => {
     await flushPromies()
 
     expect(api.searchUserList).toHaveBeenCalled()
-    expect(commit).toHaveBeenCalledWith('SET_USER', userListFixt)
+    expect(commit).toHaveBeenCalledWith('SET_USER_LIST', userListFixt)
   })
 })
