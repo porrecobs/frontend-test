@@ -1,37 +1,36 @@
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
+import Vuex from 'vuex'
 import Ranking from '@/components/Ranking'
 import ProfileCard from '@/components/ProfileCard'
+import initState from '@/store/state'
 const userListFixt = require('../../public/matchboxbrasil.json')
 
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
 describe('Ranking', () => {
-  let props
+  let state
 
   const build = () => {
     const wrapper = shallowMount(Ranking, {
-      propsData: props
+      localVue,
+      store: new Vuex.Store({
+        state
+      })
     })
 
     return {
       wrapper,
-      ProfileCard: () => wrapper.find(ProfileCard)
+      profileCard: () => wrapper.find(ProfileCard)
     }
   }
 
   beforeEach(() => {
-    props = {
-      userList: userListFixt
-    }
+    state = { ...initState }
   })
 
   it('renderiza o componente', () => {
     const { wrapper } = build()
-
     expect(wrapper.html()).toMatchSnapshot()
-  })
-
-  it('renderiza os componentes filhos', () => {
-    const { ProfileCard } = build()
-
-    expect(ProfileCard().exists()).toBe(true)
   })
 })
