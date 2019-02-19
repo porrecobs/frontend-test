@@ -34,11 +34,9 @@ export default {
     })
   },
   components: {
-    ProfileCard
+    ProfileCard,
   },
-  created () {
-    console.log(this.userList)
-  }
+  created () {}
 }
 </script>
 
@@ -47,17 +45,18 @@ export default {
 
   .img-container {
     text-align: left;
+    margin-bottom: 25px;
   }
 
   .header {
     font-size: 30pt;
     font-weight: 700;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 2px;
+    color: #272727;
   }
-
   .content {
-    border-radius: 5px;
+    border-radius: 2px;
     background-color: #fff;
     padding: 10px 0px;
     margin: 10px 0;
