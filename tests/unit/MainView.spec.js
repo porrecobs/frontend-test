@@ -45,13 +45,6 @@ describe('MainView', () => {
     expect(ranking().exists()).toBe(true)
   })
 
-  it('passa a lista para o componente de ranking', () => {
-    const { ranking } = build()
-    state.userList = userListFixt
-
-    expect(ranking().vm.userList).toBe(state.userList)
-  })
-
   it('faz requisicao para pegar a lista', () => {
 
     const { wrapper } = build()
