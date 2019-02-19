@@ -56,3 +56,31 @@ Em caso de dúvidas, envie e-mail para produto@matchboxbrasil.com
 ## Obrigado!
 
 Agradecemos sua participação no teste. Boa sorte! :)
+
+
+# matchbox
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
